@@ -8,8 +8,12 @@ class App extends Component {
   state = {
     user: {
       uid: '142341',
-      userName: 'maggeh',
+      userName: '',
     }
+  }
+
+  addUserName(name) {
+    this.setState({userName: name})
   }
 
   render() {
