@@ -1,9 +1,20 @@
 import React from 'react'
 
-const MessageForm = () => {
+const MessageForm = (props) => {
+    const handleSubmit = (ev) => {
+        ev.preventDefault()
+        props.addMessage()
+    }
     return (
-        <form className="MessageForm" name="body" placeholder ="Type a message...">
-            <input type="text" name="message"/>
+        <form 
+        className="MessageForm" 
+        onSubmit = {handleSubmit} 
+        >
+            <input 
+                type="text" 
+                name="body" 
+                placeholder="Type a message..." 
+            />
             <button type="submit">Send</button>
         </form>
     )
