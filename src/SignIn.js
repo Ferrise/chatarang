@@ -26,7 +26,7 @@ class SignIn extends Component {
                     placeholder = "Enter username"
                     value = {this.state.userName}
                     onChange = {this.handleChange}
-                >
+                />
                 <button type="submit">Login</button>
             </form>
         )
