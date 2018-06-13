@@ -1,9 +1,14 @@
 import React from 'react'
 import Avatar from './Avatar'
 import User from './User'
+import SignIn from './SignIn'
 
 
 const UserInfo = (props) => {
+    const signOut = (ev) => {
+        return <SignIn addUserName = {props.addUserName} />
+    }
+
     return(
         <div 
             className = 'UserInfo' 
@@ -14,8 +19,8 @@ const UserInfo = (props) => {
                 style = {styles.userChildren} 
                 user = {props.user} 
             />
-            <a href="#" style = {styles.aChildren}>
-                <i class="fas fa-sign-out-alt"></i>
+            <a href="#" style = {styles.aChildren} onClick = {signOut}>
+                <i className="fas fa-sign-out-alt"></i>
             </a>
         </div>
     )

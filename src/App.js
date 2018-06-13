@@ -21,7 +21,9 @@ class App extends Component {
     var page = ""
     
     if(this.state.user.userName) {
-      return  <Main user={this.state.user.userName} />
+      return  (<Main user={this.state.user.userName} 
+               addUserName = {this.addUserName} 
+              />)
     }
     else {
       return <SignIn addUserName = {this.addUserName} />
