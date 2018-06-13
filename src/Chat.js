@@ -31,7 +31,7 @@ class Chat extends Component {
         return (
             <div 
                 className="Chat" 
-                styles = {styles.chat}
+                style = {styles.chat}
             >
                 <ChatHeader />
                 <MessageList messages={this.state.messages}/>

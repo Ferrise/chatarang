@@ -6,15 +6,15 @@ const MetaData = (props) => {
         <div className = "MessageDetails">
             <div 
                 className="Metadata"
-                styles = {styles.metaData}
+                style = {styles.metaData}
             >
                 <User
                     userName = {props.userName}
-                    styles = {styles.userChildren}
+                    style = {styles.userChildren}
                 />
                 <div 
                     className="time"
-                    styles = {styles.timeChildren}
+                    style = {styles.timeChildren}
                 >
                     {props.id}
                 </div>

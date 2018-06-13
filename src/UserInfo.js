@@ -7,14 +7,14 @@ const UserInfo = (props) => {
     return(
         <div 
             className = 'UserInfo' 
-            styles = {styles.userInfo}
+            style = {styles.userInfo}
         >
-            <Avatar styles = {styles.avatarChildren} />
+            <Avatar style = {styles.avatarChildren} />
             <User 
-                styles = {styles.userChildren} 
+                style = {styles.userChildren} 
                 user = {props.user} 
             />
-            <a href="#" styles = {styles.aChildren}>
+            <a href="#" style = {styles.aChildren}>
                 <i class="fas fa-sign-out-alt"></i>
             </a>
         </div>

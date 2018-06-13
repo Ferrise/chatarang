@@ -8,7 +8,7 @@ const RoomList = () => {
                 <li style = {styles.liChildren}>
                     <a 
                         href="#"
-                        styles= {styles.liAChildren}
+                        style= {styles.liAChildren}
                     > 
                         general
                     </a>
@@ -16,7 +16,7 @@ const RoomList = () => {
                 <li style = {styles.liChildren}>
                     <a 
                         href="#"
-                        styles= {styles.liAChildren}
+                        style= {styles.liAChildren}
                     > 
                         random
                     </a>

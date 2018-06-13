@@ -9,8 +9,11 @@ const Message = (props) => {
             <MetaData 
                 userName = {props.message.userName}
                 id = {props.message.id}
+                style = {styles.detailsChildren}
             />
-            <div className="Message">
+            <div 
+                className="Message"
+                style = {styles.message}>
                 {props.message.userName}: {props.message.body}
             </div>
         </div>
@@ -19,4 +22,16 @@ const Message = (props) => {
     
 }
 
+const styles ={
+    message: {
+        display: 'flex',
+        marginTop: '1rem',
+        padding: '0 1rem',
+      },
+      
+      detailsChildren: {
+        flex: 1,
+        paddingLeft: '0.5rem',
+      },
+}
 export default Message
