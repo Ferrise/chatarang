@@ -15,25 +15,20 @@ class App extends Component {
 
   addUserName = (name) => {
     this.setState({user: {userName: name}})
+    localStorage.setItem('user', JSON.stringify(this.state.user))
   }
 
   render() {
     var page = ""
     
     if(this.state.user.userName) {
-      return  (<Main user={this.state.user.userName} 
+      return <div className="App"> (<Main user={this.state.user.userName} 
                addUserName = {this.addUserName} 
-              />)
+              />) </div>
     }
     else {
-      return <SignIn addUserName = {this.addUserName} />
+      return <div className="App"> <SignIn addUserName = {this.addUserName} /> </div>
     }
-
-    return (
-      <div className="App">
-        page
-      </div>
-    )
   }
 }
 
