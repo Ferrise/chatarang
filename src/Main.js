@@ -16,7 +16,7 @@ class Main extends Component {
   }
   
   loadRoom = (room) => {  
-    this.setState({ room: room })
+    this.setState({ room })
   }
 
   render() {
