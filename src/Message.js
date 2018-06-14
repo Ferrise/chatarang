@@ -1,36 +1,33 @@
 import React from 'react'
+
 import Avatar from './Avatar'
-import MetaData from './MetaData'
+import Metadata from './Metadata'
 
-const Message = (props) => {
-    return (
-        <div>
-            <MetaData 
-                userName = {props.message.userName}
-                id = {props.message.id}
-                style = {styles.detailsChildren}
-            />
-            <div 
-                className="Message"
-                style = {styles.message}>
-                {props.message.userName}: {props.message.body}
-            </div>
+const Message = ({ message }) => {
+  return (
+    <div className="Message" style={styles.message}>
+      <Avatar user={message.user} />
+      <div class="details" style={styles.details}>
+        <Metadata message={message} />
+        <div class="body">
+          {message.body}
         </div>
-    )
-    
-    
+      </div>
+    </div>
+  )
 }
 
-const styles ={
-    message: {
-        display: 'flex',
-        marginTop: '1rem',
-        padding: '0 1rem',
-      },
-      
-      detailsChildren: {
-        flex: 1,
-        paddingLeft: '0.5rem',
-      },
+const styles = {
+  message: {
+    display: 'flex',
+    marginTop: '1rem',
+    padding: '0 1rem',
+  },
+
+  details: {
+    flex: 1,
+    paddingLeft: '0.5rem',
+  }
 }
+
 export default Message
