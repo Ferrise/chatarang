@@ -9,7 +9,10 @@ import base from './base'
 
 class Main extends Component {
   state = {
-    room: 'general'
+    room: {
+      name: 'general'
+      description: 'Announcements and general chat'
+    }
   }
   
   changeRoom = (room, ev) => {  
@@ -21,7 +24,10 @@ class Main extends Component {
     return (
       <div className="Main" style={styles}>
         <Sidebar user={this.props.user} changeRoom={this.changeRoom} signOut={this.props.signOut} />
-        <Chat user={this.props.user} room={this.state.room}/>
+        <Chat 
+          user={this.props.user} 
+          room={this.state.room}
+        />
       </div>
     )
   }
