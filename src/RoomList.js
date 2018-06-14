@@ -40,7 +40,8 @@ class RoomList extends Component {
        {Object.keys(this.state.rooms).map(roomName =>(
            <RoomLink 
             key = {roomName}
-            room={this.state.rooms[roomName]} 
+            room={this.state.rooms[roomName]}
+            loadRoom={this.props.loadRoom} 
             />
        ))}
       </ul>
