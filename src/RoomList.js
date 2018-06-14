@@ -9,10 +9,10 @@ const RoomList = ({ changeRoom }) => {
       <h2 className={css(styles.h2)}>Rooms</h2>
       <ul className={css(styles.list)}>
         <li className={css(styles.item)}>
-          <a href="./index.html" className={css(styles.link)}>general</a>
+          <a href="./index.html" className={css(styles.link)} onClick = { (ev) => changeRoom('general', ev)}>general</a>
         </li>
         <li className={css(styles.item)}>
-          <a href="./index.html" className={css(styles.link)} onClick = { () => changeRoom('random')}>
+          <a href="./index.html" className={css(styles.link)} onClick = { (ev) => changeRoom('random', ev)}>
             random
           </a>
         </li>

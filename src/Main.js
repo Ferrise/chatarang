@@ -5,14 +5,16 @@ import App from './App'
 import Sidebar from './Sidebar'
 import Chat from './Chat'
 
+import base from './base'
+
 class Main extends Component {
   state = {
     room: 'general'
   }
   
-  changeRoom = (room) => {  
+  changeRoom = (room, ev) => {  
+    ev.preventDefault()
     this.setState({ room: room })
-    debugger
   }
 
   render() {

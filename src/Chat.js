@@ -12,6 +12,8 @@ class Chat extends Component {
 
     this.state = {
       messages: [],
+      mountedOnce: false,
+
     }
   }
 
