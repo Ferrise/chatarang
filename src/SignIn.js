@@ -1,36 +1,39 @@
 import React, { Component } from 'react'
 
 class SignIn extends Component {
-    state = {
-        userName: ''
-    }
+  state = {
+    email: '',
+  }
 
-    handleSubmit = (ev) => {
-        ev.preventDefault()
-        this.props.addUserName(this.state.userName)
-    }
+  handleChange = (ev) => {
+    this.setState({ email: ev.target.value })
+  }
 
-    handleChange = (ev) => {
-        this.setState({userName: ev.target.value})
-    }
+  handleSubmit = (ev) => {
+    ev.preventDefault()
+    this.props.handleAuth({
+      uid: '234243',
+      userName: this.state.email,
+      email: this.state.email,
+    })
+  }
 
-    render() {
-        return (
-            <form 
-                className = 'SignIn'
-                onSubmit = {this.handleSubmit}
-            >
-                <input
-                    type = "text"
-                    name = "userName"
-                    placeholder = "Enter username"
-                    value = {this.state.userName}
-                    onChange = {this.handleChange}
-                />
-                <button type="submit">Login</button>
-            </form>
-        )
-    }
+  render() {
+    return (
+      <div className="SignIn">
+        <form onSubmit={this.handleSubmit}>
+          <input
+            type="email"
+            name="email"
+            placeholder="Email"
+            value={this.state.email}
+            onChange={this.handleChange}
+          />
+          <button type="submit">Sign In</button>
+        </form>
+      </div>
+    )
+  }
 }
 
 export default SignIn
