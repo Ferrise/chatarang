@@ -1,51 +1,56 @@
 import React from 'react'
+import { StyleSheet, css } from 'aphrodite'
 
 const RoomList = () => {
-    return (
-        <nav className="RoomList">
-            <h2 style = {styles.h2Children}>Rooms</h2>
-            <ul style = {styles.ulChildren}>
-                <li style = {styles.liChildren}>
-                    <a 
-                        href="#"
-                        style= {styles.liAChildren}
-                    > 
-                        general
-                    </a>
-                </li>
-                <li style = {styles.liChildren}>
-                    <a 
-                        href="#"
-                        style= {styles.liAChildren}
-                    > 
-                        random
-                    </a>
-                </li>
-            </ul>
-        </nav>
-    )
+  return (
+    <nav
+      className={`RoomList ${css(styles.nav)}`}
+    >
+      <h2 className={css(styles.h2)}>Rooms</h2>
+      <ul className={css(styles.list)}>
+        <li className={css(styles.item)}>
+          <a href="#" className={css(styles.link)}>general</a>
+        </li>
+        <li className={css(styles.item)}>
+          <a href="#" className={css(styles.link)}>random</a>
+        </li>
+      </ul>
+    </nav>
+  )
 }
 
-const styles = {
-    h2Children: {
-        fontSize: '1rem',
+const styles = StyleSheet.create({
+  nav: {
+    padding: '0 1rem',
+  },
+
+  h2: {
+    fontSize: '1rem',
+  },
+
+  list: {
+    listStyle: 'none',
+    marginLeft: 0,
+    paddingLeft: 0,
+  },
+
+  item: {
+    marginBottom: '0.5rem',
+  },
+
+  link: {
+    display: 'block',
+    color: 'whitesmoke',
+    textDecoration: 'none',
+
+    '::before': {
+      content: '"# "',
     },
-      
-    ulChildren: {
-        listStyle: 'none',
-        marginLeft: 0,
-        paddingLeft: 0,
-    },
-      
-    liChildren: {
-        marginBottom: '0.5rem',
-    },
-      
-    liAChildren: {
-        display: 'block',
-        color: 'whitesmoke',
-        textDecoration: 'none',
-    },
-}
+
+    ':hover': {
+      backgroundColor: 'rgba(255, 255, 255, 0.2)',
+    }
+  },
+})
 
 export default RoomList
