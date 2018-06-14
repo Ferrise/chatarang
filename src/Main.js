@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import ReactDOM from 'react-dom'
+import App from './App'
 
 import Sidebar from './Sidebar'
 import Chat from './Chat'
@@ -8,10 +10,8 @@ class Main extends Component {
     room: 'general'
   }
   
-  changeRoom = (room) => {
-    debugger
+  changeRoom = (room) => {  
     this.setState({ room })
-    debugger
   }
 
   render() {
