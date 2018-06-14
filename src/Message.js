@@ -5,7 +5,6 @@ import MetaData from './MetaData'
 const Message = (props) => {
     return (
         <div>
-            <Avatar />
             <MetaData 
                 userName = {props.message.userName}
                 id = {props.message.id}
