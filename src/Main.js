@@ -10,20 +10,19 @@ import base from './base'
 class Main extends Component {
   state = {
     room: {
-      name: 'general'
-      description: 'Announcements and general chat'
+      name: 'generdfal',
+      description: 'Annoudfasdncements and general chat'
     }
   }
   
-  changeRoom = (room, ev) => {  
-    ev.preventDefault()
+  loadRoom = (room) => {  
     this.setState({ room: room })
   }
 
   render() {
     return (
       <div className="Main" style={styles}>
-        <Sidebar user={this.props.user} changeRoom={this.changeRoom} signOut={this.props.signOut} />
+        <Sidebar user={this.props.user} loadRoom={this.loadRoom} signOut={this.props.signOut} />
         <Chat 
           user={this.props.user} 
           room={this.state.room}

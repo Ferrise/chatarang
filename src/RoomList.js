@@ -1,25 +1,53 @@
-import React from 'react'
+import React, {Component} from 'react'
 import { StyleSheet, css } from 'aphrodite'
 
-const RoomList = ({ changeRoom }) => {
-  return (
+import RoomLink from './RoomLink'
+
+class RoomList extends Component {
+    state = {
+        rooms: {
+            general: {
+                name: 'general',
+                description: 'Whatever. Just chat',
+                messages: [],
+            },
+
+            s2morning: {
+                name: 's2morning',
+                description: 'Chat about coursework',
+                messages: [],
+
+            },
+
+            random: {
+                name: 'random',
+                description: 'memes, probably',
+                messages: [],
+            }
+
+
+        }
+    }
+
+  
+    render(){
+    return (
     <nav
       className={`RoomList ${css(styles.nav)}`}
     >
       <h2 className={css(styles.h2)}>Rooms</h2>
       <ul className={css(styles.list)}>
-        <li className={css(styles.item)}>
-          <a href="./index.html" className={css(styles.link)} onClick = { (ev) => changeRoom('general', ev)}>general</a>
-        </li>
-        <li className={css(styles.item)}>
-          <a href="./index.html" className={css(styles.link)} onClick = { (ev) => changeRoom('random', ev)}>
-            random
-          </a>
-        </li>
+       {Object.keys(this.state.rooms).map(roomName =>(
+           <RoomLink 
+            key = {roomName}
+            room={this.state.rooms[roomName]} 
+            />
+       ))}
       </ul>
     </nav>
   )
 }
+      }
 
 const styles = StyleSheet.create({
   nav: {

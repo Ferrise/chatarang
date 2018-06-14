@@ -18,11 +18,11 @@ class Chat extends Component {
   }
 
   componentWillMount() {
-      base.syncState(this.props.room + "/messages", {
-          context: this, 
-          state: 'messages',
-          asArray: true,
-      })
+    base.syncState('random/messages', {
+      context: this,
+      state: 'messages',
+      asArray: true,
+    })
   }
 
   addMessage = (body) => {
