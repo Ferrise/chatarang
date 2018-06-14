@@ -11,7 +11,8 @@ class Main extends Component {
   }
   
   changeRoom = (room) => {  
-    this.setState({ room })
+    this.setState({ room: room })
+    debugger
   }
 
   render() {
