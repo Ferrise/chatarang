@@ -18,7 +18,7 @@ class Chat extends Component {
   }
 
 
-  componentDidUpdate(prevProps, ) {
+  componentDidUpdate(prevProps) {
     if (prevProps.room.name !== this.props.room.name){
         this.syncMessages()
     } 

@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 import { StyleSheet, css } from 'aphrodite'
 
 import RoomLink from './RoomLink'
-import base from './base'
 import RoomForm from './RoomForm'
+import base from './base'
 
 class RoomList extends Component {
   state = {
@@ -22,11 +22,11 @@ class RoomList extends Component {
   }
 
   showRoomForm = () => {
-      this.setState({showRoomForm: true})
+    this.setState({ showRoomForm: true })
   }
 
   hideRoomForm = () => {
-    this.setState({showRoomForm: false})
+    this.setState({ showRoomForm: false })
   }
 
   addRoom = (room) => {
@@ -36,36 +36,40 @@ class RoomList extends Component {
   }
 
   render() {
-    if(this.state.showRoomForm){
-        return <RoomForm hideRoomForm = {this.hideRoomForm} addRoom={this.addRoom}/>
-    }
-    else {
-        return (
-            <nav
-              className={`RoomList ${css(styles.nav)}`}
+    if (this.state.showRoomForm) {
+      return (
+        <RoomForm
+          hideRoomForm={this.hideRoomForm}
+          addRoom={this.addRoom}
+        />
+      )
+    } else {
+      return (
+        <nav
+          className={`RoomList ${css(styles.nav)}`}
+        >
+          <div className={css(styles.heading)}>
+            <h2 className={css(styles.h2)}>Rooms</h2>
+            <button
+              className={css(styles.button)}
+              onClick={this.showRoomForm}
             >
-              <div className={css(styles.heading)}>
-                <h2 className={css(styles.h2)}>Rooms</h2>
-                <button
-                  className={css(styles.button)}
-                  onClick={() => this.showRoomForm()}
-                >
-                  <i className="fas fa-plus-circle" title="Add room"></i>
-                </button>
-              </div>
-              <ul className={css(styles.list)}>
-                {
-                  Object.keys(this.state.rooms).map(roomName => (
-                    <RoomLink
-                      key={roomName}
-                      room={this.state.rooms[roomName]}
-                      loadRoom={this.props.loadRoom}
-                    />
-                  ))
-                }
-              </ul>
-            </nav>
-          )
+              <i className="fas fa-plus-circle" title="Add room"></i>
+            </button>
+          </div>
+          <ul className={css(styles.list)}>
+            {
+              Object.keys(this.state.rooms).map(roomName => (
+                <RoomLink
+                  key={roomName}
+                  room={this.state.rooms[roomName]}
+                  loadRoom={this.props.loadRoom}
+                />
+              ))
+            }
+          </ul>
+        </nav>
+      )
     }
   }
 }

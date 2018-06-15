@@ -12,26 +12,14 @@ const RoomLink = ({ room, loadRoom }) => {
           <a 
             href="./index.html" 
             className={css(styles.link)} 
-            onClick = { handleClick }>general</a>
+            onClick = { handleClick }>
+            { room.name }
+          </a>
         </li>
     )
 }
 
 const styles = StyleSheet.create({
-    nav: {
-      padding: '0 1rem',
-    },
-  
-    h2: {
-      fontSize: '1rem',
-    },
-  
-    list: {
-      listStyle: 'none',
-      marginLeft: 0,
-      paddingLeft: 0,
-    },
-  
     item: {
       marginBottom: '0.5rem',
     },
