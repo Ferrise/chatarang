@@ -36,7 +36,7 @@ class SignIn extends Component {
             onSubmit={this.handleSubmit}
           >
             <h1>Welcome!</h1>
-            <label htmlFor="email" className={css(styles.label)}>
+            {/* <label htmlFor="email" className={css(styles.label)}>
               Email
             </label>
             <input
@@ -49,7 +49,7 @@ class SignIn extends Component {
             <button type="submit" className={css(styles.button)}>
               Sign In
             </button>
-            <div>or</div>
+            <div>or</div> */}
 
             <button
               type="button"
