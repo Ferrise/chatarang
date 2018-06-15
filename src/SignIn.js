@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { StyleSheet, css } from 'aphrodite'
 
-import { auth, googleProvider, twitterProvider } from './base'
+import { auth, googleProvider, githubProvider, twitterProvider } from './base'
 
 class SignIn extends Component {
   state = {
@@ -25,6 +25,13 @@ class SignIn extends Component {
     auth.signInWithPopup(twitterProvider)
       .then(result => this.props.handleAuth(result.user))
       .catch(error => console.log(error))
+  }
+
+  authenticateGithub = () => {
+    auth.signInWithPopup(githubProvider)
+    .then(result => this.props.handleAuth(result.user))
+    .catch(error => console.log(error))
+  
   }
 
   render() {
@@ -63,6 +70,15 @@ class SignIn extends Component {
             >
               <i class={`fab fa-twitter ${css(styles.brandIcon)}`}></i>
               Sign in with Twitter
+            </button>
+
+             <button
+              type="button"
+              className={css(styles.button, styles.github)}
+              onClick={this.authenticateGithub}
+            >
+              <i class={`fab fa-github ${css(styles.brandIcon)}`}></i>
+               Sign in with Github
             </button>
 
             <button
@@ -109,6 +125,10 @@ const styles = StyleSheet.create({
   },
   twitter: {
     backgroundColor: 'blue',
+  },
+  github: {
+    backgroundColor: 'black',
+    color: 'white',
   },
   main: {
     flex: 1,
