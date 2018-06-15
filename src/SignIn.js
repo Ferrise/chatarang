@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { StyleSheet, css } from 'aphrodite'
 
-import { auth, googleProvider } from './base'
+import { auth, googleProvider, twitterProvider } from './base'
 
 class SignIn extends Component {
   state = {
@@ -19,6 +19,12 @@ class SignIn extends Component {
 
   authenticate = () => {
     auth.signInWithPopup(googleProvider)
+  }
+
+  authenticateTwitter = () => {
+    auth.signInWithPopup(twitterProvider)
+      .then(result => this.props.handleAuth(result.user))
+      .catch(error => console.log(error))
   }
 
   render() {
@@ -50,6 +56,14 @@ class SignIn extends Component {
               Sign In
             </button>
             <div>or</div> */}
+              <button
+              type="button"
+              className={css(styles.button, styles.twitter)}
+              onClick={this.authenticateTwitter}
+            >
+              <i class={`fab fa-twitter ${css(styles.brandIcon)}`}></i>
+              Sign in with Twitter
+            </button>
 
             <button
               type="button"
@@ -92,6 +106,9 @@ const styles = StyleSheet.create({
     textTransform: 'uppercase',
     lineHeight: '80px',
     fontSize: '2rem',
+  },
+  twitter: {
+    backgroundColor: 'blue',
   },
   main: {
     flex: 1,
