@@ -13,27 +13,32 @@ class Chat extends Component {
     this.state = {
       messages: [],
       rebaseBinding: null,
-
     }
   }
 
+  componentWillMount() {
+    this.syncMessages()
+  }
 
   componentDidUpdate(prevProps) {
-    if (prevProps.room.name !== this.props.room.name){
-        this.syncMessages()
-    } 
+    if (prevProps.room.name !== this.props.room.name) {
+      this.syncMessages()
+    }
   }
 
   syncMessages = () => {
-    if(this.state.rebastBinding){
-        base.removeBinding(this.state.rebaseBinding)
+    if (this.state.rebaseBinding) {
+      base.removeBinding(this.state.rebaseBinding)
     }
-    const rebaseBinding = 
-    base.syncState(`${this.props.room.name}/messages`, {
+
+    const rebaseBinding = base.syncState(
+      `${this.props.room.name}/messages`,
+      {
         context: this,
         state: 'messages',
         asArray: true,
-      })
+      }
+    )
 
     this.setState({ rebaseBinding })
   }
@@ -53,9 +58,9 @@ class Chat extends Component {
     return (
       <div className="Chat" style={styles}>
         <ChatHeader room={this.props.room} />
-        <MessageList 
-            messages={this.state.messages} 
-            room={this.props.room}
+        <MessageList
+          messages={this.state.messages}
+          room={this.props.room}
         />
         <MessageForm addMessage={this.addMessage} />
       </div>

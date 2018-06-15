@@ -1,30 +1,30 @@
 import React, { Component } from 'react'
-import ReactDOM from 'react-dom'
-import App from './App'
 
 import Sidebar from './Sidebar'
 import Chat from './Chat'
 
-import base from './base'
-
 class Main extends Component {
   state = {
     room: {
-      name: 'generdfal',
-      description: 'Annoudfasdncements and general chat'
+      name: 's2morning',
+      description: 'Chatter about the actual class',
     }
   }
-  
-  loadRoom = (room) => {  
+
+  loadRoom = (room) => {
     this.setState({ room })
   }
 
   render() {
     return (
       <div className="Main" style={styles}>
-        <Sidebar user={this.props.user} loadRoom={this.loadRoom} signOut={this.props.signOut} />
-        <Chat 
-          user={this.props.user} 
+        <Sidebar
+          user={this.props.user}
+          signOut={this.props.signOut}
+          loadRoom={this.loadRoom}
+        />
+        <Chat
+          user={this.props.user}
           room={this.state.room}
         />
       </div>
