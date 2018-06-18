@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { StyleSheet, css } from 'aphrodite'
+import 'bad-words'
 
 class MessageForm extends Component {
   state = {
@@ -8,7 +9,15 @@ class MessageForm extends Component {
 
   handleSubmit = (ev) => {
     ev.preventDefault()
-    this.props.addMessage(this.state.body)
+
+    //handle word censoration
+    const Filter = require('bad-words'),
+    filter = new Filter();
+    filter.addWords(['heck', 'frick'])
+    const censoredBody = filter.clean(this.state.body)
+
+
+    this.props.addMessage(censoredBody)
     this.setState({ body: '' })
   }
 
