@@ -13,7 +13,7 @@ class MessageForm extends Component {
     //handle word censoration
     const Filter = require('bad-words'),
     filter = new Filter();
-    filter.addWords(['heck', 'frick'])
+    filter.addWords(['heck', 'frick', 'papa johns'])
     const censoredBody = filter.clean(this.state.body)
 
 
