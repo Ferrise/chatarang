@@ -68,7 +68,7 @@ class SignIn extends Component {
               className={css(styles.button, styles.twitter)}
               onClick={this.authenticateTwitter}
             >
-              <i class={`fab fa-twitter ${css(styles.brandIcon)}`}></i>
+              <i className={`fab fa-twitter ${css(styles.brandIcon)}`}></i>
               Sign in with Twitter
             </button>
 
@@ -77,7 +77,7 @@ class SignIn extends Component {
               className={css(styles.button, styles.github)}
               onClick={this.authenticateGithub}
             >
-              <i class={`fab fa-github ${css(styles.brandIcon)}`}></i>
+              <i className={`fab fa-github ${css(styles.brandIcon)}`}></i>
                Sign in with Github
             </button>
 
