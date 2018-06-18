@@ -43,11 +43,12 @@ class Chat extends Component {
     this.setState({ rebaseBinding })
   }
 
-  addMessage = (body) => {
+  addMessage = (body, isImg) => {
     const messages = [...this.state.messages]
     messages.push({
       id: Date.now(),
       user: this.props.user,
+      isImg,
       body,
     })
 

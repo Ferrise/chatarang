@@ -10,7 +10,8 @@ const Message = ({ message }) => {
       <div className="details" style={styles.details}>
         <Metadata message={message} />
         <div className="body">
-          {message.body}
+          {message.isImg ? <img src = {`${message.body}`} height = '500' width = '500' alt = ""/> :
+          message.body} 
         </div>
       </div>
     </div>
