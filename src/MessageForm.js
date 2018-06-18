@@ -33,7 +33,21 @@ class MessageForm extends Component {
       >
         <div className={css(styles.icon)}>
           <i className="fas fa-comment-alt"></i>
-        </div>
+          <label for="image_uploads">
+            <i 
+              class="fas fa-image" 
+              style = {{marginLeft: "5px"}}
+            ></i>
+          </label>
+          <input 
+            type="file" 
+            id="image_uploads" 
+            name="image_uploads" 
+            style = {{display: 'none'}}
+            accept=".jpg, .jpeg, .png"
+          />
+          </div>
+
         <input
           type="text"
           name="body"
