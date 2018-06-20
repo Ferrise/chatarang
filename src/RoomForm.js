@@ -9,7 +9,7 @@ class RoomForm extends Component {
         name: '',
         description: '',
         public: true,
-        members: [],
+        users: [],
     },
   }
 
@@ -30,7 +30,7 @@ class RoomForm extends Component {
 
   handleSelectChange = (selectedValue) => {
     const room = {...this.state.room}
-    room.members = selectedValue
+    room.users = selectedValue
     this.setState({ room })
 
     console.log(selectedValue)
@@ -104,9 +104,9 @@ class RoomForm extends Component {
                     Users to add
                   </label>
                   <Select
-                    name="members"
+                    name="users"
                     multi
-                    value={this.state.room.members}
+                    value={this.state.room.users}
                     options={this.users()}
                     onChange={this.handleSelectChange}
                   />
