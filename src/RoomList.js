@@ -27,6 +27,10 @@ class RoomList extends Component {
     this.setState({ rooms })
   }
 
+  getRooms(){
+    return this.state.rooms
+  }
+
   render() {
     return (
       <Switch>
